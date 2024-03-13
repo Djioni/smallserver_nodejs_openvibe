@@ -32,7 +32,7 @@ async function sendCommands(ws) {
 
   for (let i = 0; i < 10; i++) {
     await new Promise(resolve => setTimeout(resolve, 2000));
-    await ws.send('Start_Of_Trial');
+    await ws.send('START_OF_TRIAL');
 
     isTraining = true;
     const sendDataTask = sendData(ws);
@@ -41,7 +41,7 @@ async function sendCommands(ws) {
     isTraining = false;
     await sendDataTask;
 
-    await ws.send('End_Of_Trial');
+    await ws.send('END_OF_TRIAL');
   }
 
   await new Promise(resolve => setTimeout(resolve, 2000));
